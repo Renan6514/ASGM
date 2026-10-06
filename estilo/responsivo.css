@@ -1,0 +1,106 @@
+/* ==========================================================
+   responsivo.css — ajustes para celular e tablet
+   Carregar DEPOIS do style.css (já está linkado nas páginas)
+   ========================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+img { max-width: 100%; height: auto; }
+
+/* ---------- Tablet e celular ---------- */
+@media (max-width: 768px) {
+
+    body { font-size: 16px; }
+
+    h1 {
+        font-size: clamp(24px, 7vw, 34px);
+        text-align: center;
+        padding: 0 16px;
+        line-height: 1.2;
+    }
+
+    /* Menu: quebra em linhas e centraliza */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 14px;
+        padding: 0 12px;
+    }
+    nav a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    /* Seções por país */
+    .secao-pais {
+        padding: 0 16px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .sec-label-pais span {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* Galeria: grade de 2 colunas com cards iguais e alinhados */
+    .galeria {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+    .card-links {
+        display: block;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .card {
+        width: 100% !important;
+        height: 100%;
+        margin: 0 !important;
+    }
+    .card img {
+        display: block;
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+    .card h3 { font-size: 15px; line-height: 1.3; }
+    .card p  { font-size: 13px; }
+
+    /* Rodapé */
+    footer p { font-size: 13px; padding: 0 16px; text-align: center; }
+
+    /* ---------- Página Sobre ---------- */
+    .sobre-corpo { padding: 0 16px; }
+    .sobre-bloco, .bloco { padding: 22px 20px; }
+    .sobre-objetivo { padding-left: 20px; }
+    .sobre-row, .creditos { grid-template-columns: 1fr; }
+    .sobre-stats { grid-template-columns: repeat(2, 1fr); }
+    .sobre-bloco-label { font-size: 12px; letter-spacing: 4px; }
+    .sobre-bloco h3 { font-size: 18px; }
+    .sobre-bloco p { font-size: 15px; line-height: 1.8; }
+    .ref-lista li { font-size: 14px; }
+    .sobre-stat-num { font-size: 30px; }
+    .sobre-stat-lbl { font-size: 11px; }
+    .bloco p { font-size: 13px; }
+
+    /* ---------- Página Contato ---------- */
+    main { padding: 40px 16px !important; gap: 32px !important; }
+    form { padding: 22px 18px !important; }
+    form label { font-size: 15px !important; }
+    /* 16px evita o zoom automático do iPhone ao tocar no campo */
+    form input, form textarea { font-size: 16px !important; }
+    form button { font-size: 16px !important; width: 100%; padding: 12px 20px !important; }
+}
+
+/* ---------- Celulares bem estreitos: 1 card por linha ---------- */
+@media (max-width: 360px) {
+    .galeria { grid-template-columns: 1fr !important; }
+}
